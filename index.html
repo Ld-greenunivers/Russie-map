@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphique Plotly — Budget militaire 2025</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+    #chart {
+      width: 100%;
+      height: 90vh;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Top 5 des budgets militaires en 2025</h1>
+  <div id="chart"></div>
+
+  <script>
+    const data = [{
+      type: "pie",
+      labels: [
+        "États-Unis = 895 milliards",
+        "Chine = 266.85 milliards",
+        "Russie = 126 milliards",
+        "Inde = 75 milliards",
+        "Arabie saoudite = 74.76 milliards"
+      ],
+      values: [895, 266.85, 126, 75, 74.76],
+      hoverinfo: "label+percent+value",
+      textinfo: "label+percent"
+    }];
+
+    const layout = {
+      title: "",
+    };
+
+    Plotly.newPlot("chart", data, layout, {responsive: true});
+  </script>
+</body>
+</html>
